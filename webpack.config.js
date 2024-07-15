@@ -76,7 +76,16 @@ module.exports = {
             ]
           }
         }
-      }
+      },
+      // The fonts loaders.
+      {
+        test: /\.woff2?$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
+      },
+
     ]
   },
   optimization: {
