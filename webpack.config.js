@@ -18,6 +18,11 @@ module.exports = {
   mode: mode,
   target: target,
   devtool: devtool,
+  devServer: {
+    port: 3000,
+    open: true,
+    hot: true
+  },
   // The entry point.
   entry: path.resolve(__dirname, 'src', 'index.js'),
   // The results of a webpack job.
