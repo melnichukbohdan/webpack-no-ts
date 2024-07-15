@@ -1,4 +1,7 @@
 const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const PostcssPresetEnv = require('postcss-preset-env');
 
 // The build mode.
 const mode = process.env.NODE_ENV || 'development';
@@ -22,5 +25,43 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     filename: 'index.[contenthash].js',
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src', 'index.html'),
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
+  ],
+  // Loaders.
+  module: {
+    rules: [
+      // The HTML loader.
+      {
+      test: /\.html$/i,
+      loader: 'html-loader',
+      },
+      // The SCSS/CSS loaders.
+      {
+        test: /\.(c|sa|sc)ss$/i,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [PostcssPresetEnv]
+              }
+            }
+          },
+          'sass-loader',
+        ],
+      }
+    ]
+  },
+  optimization: {
+    minimize: false
   }
 }
