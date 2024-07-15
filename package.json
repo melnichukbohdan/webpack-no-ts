@@ -1,0 +1,25 @@
+{
+  "name": "webpack-no-ts",
+  "version": "1.0.0",
+  "description": "video https://www.youtube.com/watch?v=o8KMucDpSno",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melnichukbohdan/webpack-no-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melnichukbohdan/webpack-no-ts/issues"
+  },
+  "homepage": "https://github.com/melnichukbohdan/webpack-no-ts#readme",
+  "devDependencies": {
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
