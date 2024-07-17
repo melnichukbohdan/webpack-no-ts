@@ -4,3 +4,10 @@ body {
   color: $text;
   user-select: none;
 }
+
+.image {
+  width: 300px;
+  height: 500px;
+  background-size: cover;
+  background-image: url('img/fox.png');
+}
